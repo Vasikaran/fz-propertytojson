@@ -1,10 +1,10 @@
 {
   "name": "fz-propertytojson",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "convert propertyfile to json object",
   "main": "lib/index.js",
   "bin": {
-    "propertToJson": "bin/build"
+    "propertyToJson": "bin/build"
   },
   "scripts": {
     "clean": "rimraf lib coverage",
