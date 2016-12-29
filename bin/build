@@ -1,0 +1,14 @@
+#! /usr/bin/env node
+
+var propertyToJson = require('../lib/index').default;
+if(process.argv.length==6){
+  console.log(process.argv)
+  var propertyFolder = process.argv[2];
+  var i18nFolder = process.argv[3];
+  var baseProperty = process.argv[4];
+  var jsProperty = process.argv[5];
+  propertyToJson(propertyFolder,i18nFolder,baseProperty,jsProperty)
+}
+else{
+  console.log("propertyToJson propertyFolder i18nFolder baseProperty jsProperty");
+}
