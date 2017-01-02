@@ -1,6 +1,6 @@
 {
   "name": "fz-propertytojson",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "convert propertyfile to json object",
   "main": "lib/index.js",
   "bin": {

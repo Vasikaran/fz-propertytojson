@@ -33,7 +33,7 @@ function jsonToString(json){
               else{
                 return "\\"+match
               }
-            })+"\"";
+            }).replace(/(\r\n|\n|\r)/g,"")+"\"";
       if(i!=keys.length-1)
         str+=","
     })
