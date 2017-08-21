@@ -1,6 +1,6 @@
 {
   "name": "fz-propertytojson",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "convert propertyfile to json object",
   "main": "lib/index.js",
   "bin": {
@@ -17,12 +17,7 @@
     "type": "git",
     "url": "git+https://github.com/vimalceg/propertytojson.git"
   },
-  "keywords": [
-    "properties",
-    "to",
-    "json",
-    "object"
-  ],
+  "keywords": ["properties", "to", "json", "object"],
   "author": "vimalesan.ceg@gmail.com",
   "license": "MIT",
   "bugs": {
@@ -30,41 +25,21 @@
   },
   "homepage": "https://github.com/vimalceg/propertytojson#readme",
   "babel": {
-    "presets": [
-      "es2015"
-    ]
+    "presets": ["es2015"]
   },
   "jest": {
     "rootDir": ".",
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/__tests__/library/"
-    ],
-    "unmockedModulePathPatterns": [
-      "__tests__",
-      "node_modules",
-      ".*"
-    ],
-    "testPathDirs": [
-      "<rootDir>/__tests__/"
-    ],
+    "testPathIgnorePatterns": ["/node_modules/", "/__tests__/library/"],
+    "unmockedModulePathPatterns": ["__tests__", "node_modules", ".*"],
+    "testPathDirs": ["<rootDir>/__tests__/"],
     "collectCoverage": true,
-    "coverageReporters": [
-      "json",
-      "html",
-      "json-summary",
-      "text"
-    ],
-    "moduleFileExtensions": [
-      "js"
-    ],
+    "coverageReporters": ["json", "html", "json-summary", "text"],
+    "moduleFileExtensions": ["js"],
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(jsx|js|json|node)$",
     "transform": {
       ".*": "<rootDir>/__tests__/library/preprocessor.js"
     },
-    "setupFiles": [
-      "<rootDir>/__tests__/library/setup.jsx"
-    ]
+    "setupFiles": ["<rootDir>/__tests__/library/setup.jsx"]
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
