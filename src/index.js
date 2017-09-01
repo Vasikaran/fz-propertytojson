@@ -19,7 +19,12 @@ function stringToJson(str) {
   return json;
 }
 function jsonToString(json, context) {
-  var str = 'var ' + context.trim() + 'I18n={';
+    var str = '';
+    if (context === 'i18n' || !context){
+        str = 'var i18n={';
+    }else{
+        str = 'var ' + context.trim() + 'I18n={';
+    }
   var keys = Object.keys(json);
   keys.forEach((key, i) => {
     var value = json[key];
@@ -53,11 +58,12 @@ export default function folderIterate(
 ) {
   var basePropertyStr = fs.readFileSync(baseProperty).toString();
   var basePropertyJson = stringToJson(basePropertyStr);
-  var jsPropertyStr = fs.readFileSync(jsProperty).toString();
-  try {
-    var jsPropertyJson = JSON.parse(jsPropertyStr);
-  } catch (e) {
-    var jsPropertyJson = stringToJson(jsPropertyStr);
+  var jsPropertyJson;
+  if (typeof jsProperty === 'string'){
+      var jsPropertyStr = fs.readFileSync(jsProperty).toString();
+      jsPropertyJson = stringToJson(jsPropertyStr);
+  }else if (typeof jsProperty === 'object'){
+      jsPropertyJson = jsProperty;
   }
 
   fs.readdir(propertyFolder, function(err, files) {
@@ -90,7 +96,6 @@ export default function folderIterate(
             );
             outputFileName += '.js';
           }
-          console.log(file);
           if (!fs.existsSync(i18nFolder)) {
             fs.mkdir(i18nFolder);
           }
