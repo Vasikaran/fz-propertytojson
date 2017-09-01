@@ -23,7 +23,7 @@ function jsonToString(json, context) {
     if (context === 'i18n' || !context){
         str = 'var i18n={';
     }else{
-        str = 'var ' + context.trim() + 'I18n={';
+        str = 'var ' + context.trim() + '={';
     }
   var keys = Object.keys(json);
   keys.forEach((key, i) => {
